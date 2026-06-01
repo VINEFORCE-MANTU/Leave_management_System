@@ -1,0 +1,165 @@
+/* =====================================================
+   LEAVE TABLE – UNIQUE COLUMN STYLE (PrimeNG)
+   ===================================================== */
+
+.leave-table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Table layout */
+.leave-table .p-datatable-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* ================= HEADER ================= */
+.leave-table thead th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #343a40;
+  padding: 12px 14px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* ================= BODY CELLS ================= */
+.leave-table tbody td {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #495057;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* ================= COLUMN COLORS ================= */
+
+/* Employee Name */
+.leave-table thead th:nth-child(1),
+.leave-table tbody td:nth-child(1) {
+  background-color: #f0f7ff;
+}
+
+/* Leave Type */
+.leave-table thead th:nth-child(2),
+.leave-table tbody td:nth-child(2) {
+  background-color: #fff7e6;
+}
+
+/* Start Date */
+.leave-table thead th:nth-child(3),
+.leave-table tbody td:nth-child(3) {
+  background-color: #f6ffed;
+}
+
+/* End Date */
+.leave-table thead th:nth-child(4),
+.leave-table tbody td:nth-child(4) {
+  background-color: #fff1f0;
+}
+
+/* Total Days */
+.leave-table thead th:nth-child(5),
+.leave-table tbody td:nth-child(5) {
+  background-color: #f9f0ff;
+}
+
+/* Status */
+.leave-table thead th:nth-child(6),
+.leave-table tbody td:nth-child(6) {
+  background-color: #fcffe6;
+}
+
+/* Created Date */
+.leave-table thead th:nth-child(7),
+.leave-table tbody td:nth-child(7) {
+  background-color: #e6fffb;
+}
+
+/* Actions */
+.leave-table thead th:nth-child(8),
+.leave-table tbody td:nth-child(8) {
+  background-color: #f8f9fa;
+}
+
+/* ================= COLUMN SEPARATORS ================= */
+.leave-table th,
+.leave-table td {
+  border-right: 1px solid #dee2e6;
+}
+
+.leave-table th:last-child,
+.leave-table td:last-child {
+  border-right: none;
+}
+
+/* ================= ROW HOVER ================= */
+.leave-table tbody tr:hover td {
+  background-color: #e9f3ff !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ================= SORT ICON ================= */
+.leave-table .p-sortable-column-icon {
+  color: #0d6efd;
+}
+
+/* ================= BUTTONS ================= */
+.leave-table .btn {
+  white-space: nowrap;
+}
+
+/* ================= STATUS BADGES ================= */
+.badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Pending */
+.badge-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Approved */
+.badge-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Rejected */
+.badge-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ================= NO DATA ================= */
+.primeng-no-data {
+  padding: 20px;
+  font-size: 15px;
+  color: #6c757d;
+}
+
+/* ================= PAGINATOR ================= */
+.p-paginator {
+  border-top: 1px solid #dee2e6;
+  padding-top: 10px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .leave-table thead th,
+  .leave-table tbody td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .leave-table .btn {
+    font-size: 12px;
+  }
+}

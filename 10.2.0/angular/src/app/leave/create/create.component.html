@@ -1,0 +1,215 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #createLeaveForm="ngForm"
+  (ngSubmit)="save()">
+
+  <!-- Modal Header -->
+  <abp-modal-header
+    [title]="'ApplyLeave' | localize"
+    (onCloseClick)="bsModalRef.hide()">
+  </abp-modal-header>
+
+  <div class="modal-body">
+
+    <!-- Employee Name -->
+    <div class="form-group row required">
+
+      <label
+        class="col-md-3 col-form-label"
+        for="employeeName">
+
+        {{ 'EmployeeName' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <input
+          type="text"
+          class="form-control"
+          name="employeeName"
+          id="employeeName"
+          required
+          minlength="2"
+          maxlength="100"
+          [(ngModel)]="leave.employeeName"
+          #employeeNameModel="ngModel"
+          #employeeNameEl />
+
+        <abp-validation-summary
+          [control]="employeeNameModel"
+          [controlEl]="employeeNameEl">
+        </abp-validation-summary>
+
+      </div>
+
+    </div>
+
+    <!-- Leave Type -->
+    <div class="form-group row required">
+
+      <label
+        class="col-md-3 col-form-label"
+        for="leaveType">
+
+        {{ 'LeaveType' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <select
+          class="form-control"
+          name="leaveType"
+          id="leaveType"
+          required
+          [(ngModel)]="leave.leaveType"
+          #leaveTypeModel="ngModel"
+          #leaveTypeEl>
+
+          <option value="">
+            Select Leave Type
+          </option>
+
+          <option
+            *ngFor="let type of leaveTypes"
+            [value]="type.id">
+
+            {{ type.name }}
+
+          </option>
+
+        </select>
+
+        <abp-validation-summary
+          [control]="leaveTypeModel"
+          [controlEl]="leaveTypeEl">
+        </abp-validation-summary>
+
+      </div>
+
+    </div>
+
+    <!-- Start Date -->
+    <div class="form-group row required">
+
+      <label
+        class="col-md-3 col-form-label"
+        for="startDate">
+
+        {{ 'StartDate' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <input
+          type="date"
+          class="form-control"
+          name="startDate"
+          id="startDate"
+          required
+          [(ngModel)]="leave.startDate"
+          #startDateModel="ngModel"
+          #startDateEl />
+
+        <abp-validation-summary
+          [control]="startDateModel"
+          [controlEl]="startDateEl">
+        </abp-validation-summary>
+
+      </div>
+
+    </div>
+
+    <!-- End Date -->
+    <div class="form-group row required">
+
+      <label
+        class="col-md-3 col-form-label"
+        for="endDate">
+
+        {{ 'EndDate' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <input
+          type="date"
+          class="form-control"
+          name="endDate"
+          id="endDate"
+          required
+          [(ngModel)]="leave.endDate"
+          #endDateModel="ngModel"
+          #endDateEl />
+
+        <abp-validation-summary
+          [control]="endDateModel"
+          [controlEl]="endDateEl">
+        </abp-validation-summary>
+
+      </div>
+
+    </div>
+
+    <!-- Reason -->
+    <div class="form-group row">
+
+      <label
+        class="col-md-3 col-form-label"
+        for="reason">
+
+        {{ 'Reason' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <textarea
+          rows="4"
+          class="form-control"
+          name="reason"
+          id="reason"
+          maxlength="500"
+          [(ngModel)]="leave.reason">
+        </textarea>
+
+      </div>
+
+    </div>
+
+    <!-- Status -->
+    <div class="form-group row">
+
+      <label
+        class="col-md-3 col-form-label">
+
+        {{ 'Status' | localize }}
+
+      </label>
+
+      <div class="col-md-9">
+
+        <input
+          type="text"
+          class="form-control"
+          value="Pending"
+          readonly />
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Modal Footer -->
+  <abp-modal-footer
+    [cancelDisabled]="saving"
+    [saveDisabled]="!createLeaveForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()">
+  </abp-modal-footer>
+
+</form>
